@@ -34,6 +34,13 @@ function AdminHeader() {
         >
           Employees
         </a>
+
+        <a
+          href="/adminAddEmployee"
+          className="hover:text-blue-400 hover:scale-105 transition-all duration-200 ease-in-out"
+        >
+          Add Employee
+        </a>
       </div>
 
       <img

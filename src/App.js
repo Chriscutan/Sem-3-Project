@@ -8,6 +8,7 @@ import YogaPage from "./pages/YogaPage";
 import ConsultantPage from "./pages/ConsultantPage";
 import AdminUsers from "./pages/AdminUsers";
 import AdminEmployees from "./pages/AdminEmployees";
+import AdminAddEmployee from "./pages/AdminAddEmployee";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/consultant" element={<ConsultantPage />} />
         <Route path="/adminUsers" element={<AdminUsers />} />
         <Route path="/adminEmployees" element={<AdminEmployees />} />
+        <Route path="/adminAddEmployee" element={<AdminAddEmployee />} />
       </Routes>
     </BrowserRouter>
   );
