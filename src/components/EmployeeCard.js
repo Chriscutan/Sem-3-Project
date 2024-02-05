@@ -18,7 +18,7 @@ function EmployeeCard({ id, name, email, mobile, profile }) {
       <img
         src={profile}
         alt="profile"
-        className="h-60 w-40 object-contain rounded-lg"
+        className="h-60 object-contain rounded-lg mb-5"
       />
 
       <p>Name: {name}</p>

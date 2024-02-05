@@ -9,7 +9,7 @@ function ConsultantCard({ id, avatar, name, experience }) {
       <img
         src={avatar}
         alt="img"
-        className="h-60 w-full object-contain cursor-pointer"
+        className="h-60 object-contain cursor-pointer"
       />
 
       <div className="flex flex-col space-y-3 mb-2">

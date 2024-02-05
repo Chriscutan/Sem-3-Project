@@ -15,7 +15,8 @@ function AdminEmployees() {
           id: doc.id,
           email: doc.data().email,
           name: doc.data().name,
-          profile: doc.data().profilePic,
+          profile: doc.data().profile_pic,
+          mobile: doc.data().mobile,
         })
       );
       setConsultants(consultantsArr);
@@ -26,19 +27,17 @@ function AdminEmployees() {
     <div>
       <AdminHeader />
 
-      <div className="max-w-3xl mx-auto mt-10">
-        <div className="flex items-center justify-evenly flex-wrap">
-          {consultants?.map((consultant) => (
-            <EmployeeCard
-              key={consultant.id}
-              id={consultant.id}
-              name={consultant.name}
-              email={consultant.email}
-              mobile={consultant.mobile}
-              profile={consultant.profile}
-            />
-          ))}
-        </div>
+      <div className="max-w-6xl mx-auto mt-10 flex items-center justify-evenly flex-wrap">
+        {consultants?.map((consultant) => (
+          <EmployeeCard
+            key={consultant.id}
+            id={consultant.id}
+            name={consultant.name}
+            email={consultant.email}
+            mobile={consultant.mobile}
+            profile={consultant.profile}
+          />
+        ))}
       </div>
     </div>
   );

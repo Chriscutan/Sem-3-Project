@@ -10,6 +10,7 @@ function AdminAddEmployee() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
+  const [exp, setExp] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
 
   const addImageToProfile = (e) => {
@@ -28,7 +29,7 @@ function AdminAddEmployee() {
   const addEmployee = async (e) => {
     e.preventDefault();
 
-    const imageRef = ref(storage, `users/${email}/profile`);
+    const imageRef = ref(storage, `employees/${email}/profile`);
 
     await uploadString(imageRef, selectedFile, "data_url").then(async () => {
       const downloadUrl = await getDownloadURL(imageRef);
@@ -38,6 +39,7 @@ function AdminAddEmployee() {
         email: email,
         mobile: mobile,
         profile_pic: downloadUrl,
+        experience: exp,
         time: serverTimestamp(),
       });
     });
@@ -46,6 +48,7 @@ function AdminAddEmployee() {
     setName("");
     setEmail("");
     setMobile("");
+    setExp("");
   };
 
   return (
@@ -93,6 +96,13 @@ function AdminAddEmployee() {
               onChange={(e) => setMobile(e.target.value)}
               type="mobile"
               placeholder="Mobile"
+              className="bg-gray-200 p-3 rounded-lg outline-none"
+            />
+            <input
+              value={exp}
+              onChange={(e) => setExp(e.target.value)}
+              type="number"
+              placeholder="Experience"
               className="bg-gray-200 p-3 rounded-lg outline-none"
             />
             <button
