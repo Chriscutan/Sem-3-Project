@@ -11,7 +11,10 @@ function LoginPage() {
     signInWithPopup(auth, provider)
       .then((authUser) => {
         if (authUser) {
-          if (authUser.user.email === "chrisrocks2829@gmail.com") {
+          if (
+            authUser.user.email === "chrisrocks2829@gmail.com" ||
+            authUser.user.email === "harimuthkarwar123@gmail.com"
+          ) {
             const q = query(doc(db, `users/${authUser.user.email}`));
             setDoc(q, {
               name: authUser.user.displayName,
